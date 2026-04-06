@@ -1,1 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
 
+  "overrides": {
+    "minimatch": "^10.2.1",
+    "glob": "^10.6.0",
+    "rimraf": "^5.0.11"
+  },
+
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2"
+  }
+}
