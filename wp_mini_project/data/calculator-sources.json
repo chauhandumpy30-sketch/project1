@@ -1,0 +1,118 @@
+{
+  "lastReviewed": "2026-03-12",
+  "benchmarks": {
+    "globalAverageLitresPerPersonDay": 135,
+    "note": "Average benchmark used for comparison messaging."
+  },
+  "factors": {
+    "showerLitresPerMinute": 9.5,
+    "bathLitresPerBath": 135,
+    "toiletFlushLitres": {
+      "modern": 4.8,
+      "dual": 3.6,
+      "old": 22.7
+    },
+    "sinkTapLitresPerMinute": 8.3,
+    "dishwasherLitresPerLoad": 15,
+    "laundryLitresPerLoad": {
+      "front": 50,
+      "top": 85,
+      "semi": 65
+    },
+    "gardenWateringLitresPerMinute": 15
+  },
+  "sources": [
+    {
+      "id": "epa-showerheads",
+      "label": "Showers",
+      "organization": "EPA WaterSense",
+      "title": "Showerheads",
+      "url": "https://www.epa.gov/watersense/showerheads",
+      "figure": "Standard showerheads use 2.5 gallons per minute, about 9.5 litres per minute.",
+      "appliesTo": [
+        "showerLitresPerMinute"
+      ],
+      "verified": true
+    },
+    {
+      "id": "epa-toilets",
+      "label": "Toilet flushing",
+      "organization": "EPA WaterSense",
+      "title": "Residential Toilets",
+      "url": "https://www.epa.gov/watersense/residential-toilets",
+      "figure": "Older toilets can use as much as 6 gallons per flush and WaterSense toilets use 1.28 gallons per flush or less.",
+      "appliesTo": [
+        "toiletFlushLitres.modern",
+        "toiletFlushLitres.dual",
+        "toiletFlushLitres.old"
+      ],
+      "verified": true
+    },
+    {
+      "id": "epa-faucets",
+      "label": "Brushing teeth and running taps",
+      "organization": "EPA WaterSense",
+      "title": "Bathroom Faucets",
+      "url": "https://www.epa.gov/watersense/bathroom-faucets",
+      "figure": "Standard bathroom sink faucets flow at 2.2 gallons per minute, about 8.3 litres per minute.",
+      "appliesTo": [
+        "sinkTapLitresPerMinute"
+      ],
+      "verified": true
+    },
+    {
+      "id": "energy-star-dishwashers",
+      "label": "Dishwasher loads",
+      "organization": "ENERGY STAR",
+      "title": "Dishwashers",
+      "url": "https://www.energystar.gov/products/dishwashers",
+      "figure": "ENERGY STAR highlights water-saving improvements and lifetime water savings for efficient dishwashers; AquaSave uses a conservative 15-litre per-load planning estimate for modern efficient cycles.",
+      "appliesTo": [
+        "dishwasherLitresPerLoad"
+      ],
+      "verified": false,
+      "note": "Planning estimate anchored to ENERGY STAR efficiency guidance, not a single mandated litres-per-load standard."
+    },
+    {
+      "id": "energy-star-clothes-washers",
+      "label": "Laundry loads",
+      "organization": "ENERGY STAR",
+      "title": "Clothes Washers",
+      "url": "https://www.energystar.gov/products/clothes_washers",
+      "figure": "ENERGY STAR clothes washers use about 30% less water than regular washers; AquaSave uses planning estimates by machine type to compare efficient vs. less efficient loads.",
+      "appliesTo": [
+        "laundryLitresPerLoad.front",
+        "laundryLitresPerLoad.top",
+        "laundryLitresPerLoad.semi"
+      ],
+      "verified": false,
+      "note": "The site uses comparative estimates because ENERGY STAR publishes efficiency deltas rather than one universal litres-per-load value."
+    },
+    {
+      "id": "epa-bathroom-overview",
+      "label": "Baths",
+      "organization": "EPA WaterSense",
+      "title": "Your Better Bathroom",
+      "url": "https://www.epa.gov/watersense/your-better-bathroom",
+      "figure": "Bathrooms are the largest indoor water users; AquaSave uses a 135-litre planning estimate for a full bath to model household impact.",
+      "appliesTo": [
+        "bathLitresPerBath"
+      ],
+      "verified": false,
+      "note": "Bath volume varies widely by tub size and fill level, so this is an explicit model assumption."
+    },
+    {
+      "id": "epa-outdoor-guidance",
+      "label": "Garden watering",
+      "organization": "EPA WaterSense",
+      "title": "Sprinkler Spruce-Up and Landscaping Tips",
+      "url": "https://www.epa.gov/watersense/sprinkler-spruce-up",
+      "figure": "EPA outdoor guidance focuses on avoiding overspray, leaks, and unnecessary irrigation; AquaSave uses a 15-litre per-minute hose estimate for simple household planning.",
+      "appliesTo": [
+        "gardenWateringLitresPerMinute"
+      ],
+      "verified": false,
+      "note": "Outdoor watering rates depend heavily on nozzle type and pressure, so this is an explicit model assumption."
+    }
+  ]
+}

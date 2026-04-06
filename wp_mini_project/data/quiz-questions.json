@@ -1,0 +1,156 @@
+[
+  {
+    "id": "freshwater-share",
+    "question": "What percentage of Earth's water is freshwater?",
+    "options": ["3%", "10%", "50%", "97%"],
+    "answer": 0,
+    "source": "USGS and commonly cited global water distribution references"
+  },
+  {
+    "id": "brushing-save",
+    "question": "Best way to save water while brushing?",
+    "options": ["Use hot water", "Turn off tap", "Brush faster", "None"],
+    "answer": 1,
+    "source": "EPA WaterSense bathroom faucet guidance"
+  },
+  {
+    "id": "leaky-faucet",
+    "question": "How much water can a faucet leak waste in a year at one drip per second?",
+    "options": ["500 liters", "3,000 liters", "10,000+ liters", "100 liters"],
+    "answer": 2,
+    "source": "EPA WaterSense Fix a Leak Week"
+  },
+  {
+    "id": "shower-duration",
+    "question": "Recommended shower duration to conserve water?",
+    "options": ["10 minutes", "5 minutes", "15 minutes", "20 minutes"],
+    "answer": 1,
+    "source": "Common water-efficiency guidance"
+  },
+  {
+    "id": "agriculture-water-use",
+    "question": "Agriculture accounts for approximately what percentage of global freshwater use?",
+    "options": ["20%", "40%", "70%", "90%"],
+    "answer": 2,
+    "source": "UN Water"
+  },
+  {
+    "id": "household-indoor-use",
+    "question": "Which activity often uses the most water inside the home?",
+    "options": ["Brushing teeth", "Toilet flushing", "Drinking", "Washing hands"],
+    "answer": 1,
+    "source": "EPA WaterSense residential toilets"
+  },
+  {
+    "id": "fixing-leaks",
+    "question": "Fixing leaks can save how much water annually?",
+    "options": ["Hundreds of liters", "Thousands of liters", "10 liters", "None"],
+    "answer": 1,
+    "source": "EPA WaterSense Fix a Leak Week"
+  },
+  {
+    "id": "water-plants-time",
+    "question": "Best time to water plants?",
+    "options": ["Noon", "Afternoon", "Early morning", "Midnight"],
+    "answer": 2,
+    "source": "EPA WaterSense landscaping tips"
+  },
+  {
+    "id": "body-water-content",
+    "question": "What is the water content in an average person's body?",
+    "options": ["30%", "50%", "60%", "80%"],
+    "answer": 2,
+    "source": "General health science guidance"
+  },
+  {
+    "id": "car-wash",
+    "question": "How much water can washing a car with a hose use?",
+    "options": ["20 liters", "50 liters", "100+ liters", "5 liters"],
+    "answer": 2,
+    "source": "Common water-conservation guidance"
+  },
+  {
+    "id": "faucet-aerator",
+    "question": "What is a low-flow faucet aerator designed to do?",
+    "options": ["Increase water pressure", "Mix air with water", "Heat water faster", "Filter water"],
+    "answer": 1,
+    "source": "EPA WaterSense bathroom faucets"
+  },
+  {
+    "id": "toilet-leak-day",
+    "question": "How much water can a leaking toilet waste per day?",
+    "options": ["5 liters", "25 liters", "50+ liters", "1 liter"],
+    "answer": 2,
+    "source": "EPA WaterSense leak guidance"
+  },
+  {
+    "id": "indoor-share",
+    "question": "What percentage of household water is typically used indoors?",
+    "options": ["40%", "50%", "70%", "90%"],
+    "answer": 3,
+    "source": "EPA WaterSense household use summaries"
+  },
+  {
+    "id": "appliance-most-water",
+    "question": "Which fixture often uses the most water in many homes?",
+    "options": ["Dishwasher", "Washing machine", "Toilet", "Shower"],
+    "answer": 2,
+    "source": "EPA WaterSense residential toilets"
+  },
+  {
+    "id": "beef-water",
+    "question": "How much water is often cited to produce 1 kg of beef?",
+    "options": ["500 liters", "7,000 liters", "15,000 liters", "25,000 liters"],
+    "answer": 2,
+    "source": "Water footprint studies"
+  },
+  {
+    "id": "thaw-food",
+    "question": "What is the best way to thaw frozen food without wasting water?",
+    "options": ["Under running water", "In the refrigerator", "On the counter", "In a microwave"],
+    "answer": 1,
+    "source": "General conservation guidance"
+  },
+  {
+    "id": "dishwasher-use",
+    "question": "Why can a modern dishwasher be better than hand-washing?",
+    "options": ["It always heats water more", "It can use controlled efficient cycles", "It needs more water", "It cleans slower"],
+    "answer": 1,
+    "source": "ENERGY STAR dishwashers"
+  },
+  {
+    "id": "mulch-benefit",
+    "question": "What does mulch do for plants?",
+    "options": ["Adds nutrients", "Retains moisture", "Kills weeds", "Attracts insects"],
+    "answer": 1,
+    "source": "EPA WaterSense landscaping tips"
+  },
+  {
+    "id": "rain-barrel",
+    "question": "What is a main benefit of installing a rain barrel?",
+    "options": ["Save money on water", "Collect free water", "Reduce runoff", "All of the above"],
+    "answer": 3,
+    "source": "EPA water-smart landscaping guidance"
+  },
+  {
+    "id": "modern-toilet-flush",
+    "question": "How many gallons does a modern efficient toilet typically flush with?",
+    "options": ["About 1.28 gallons", "3 to 5 gallons", "6 to 8 gallons", "10 gallons"],
+    "answer": 0,
+    "source": "EPA WaterSense residential toilets"
+  },
+  {
+    "id": "usable-freshwater",
+    "question": "What percentage of Earth's water is readily usable freshwater?",
+    "options": ["1%", "3%", "0.5%", "10%"],
+    "answer": 2,
+    "source": "Global water distribution facts"
+  },
+  {
+    "id": "cotton-shirt",
+    "question": "How much water is often cited to produce a cotton shirt?",
+    "options": ["500 liters", "2,000 liters", "7,000 liters", "1,000 liters"],
+    "answer": 2,
+    "source": "Water footprint studies"
+  }
+]

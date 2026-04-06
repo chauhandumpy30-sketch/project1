@@ -1,0 +1,62 @@
+[
+  {
+    "id": "demo-report-1",
+    "type": "Leaking public tap",
+    "description": "Reported dripping public tap near the market entrance. Water is pooling on the pavement.",
+    "lat": 19.0748,
+    "lng": 72.8856,
+    "source": "Community report",
+    "status": "Open",
+    "createdAt": "2026-03-10T08:30:00.000Z"
+  },
+  {
+    "id": "demo-report-2",
+    "type": "Broken sprinkler",
+    "description": "Sprinkler overspray watering the footpath instead of the landscape strip.",
+    "lat": 19.0804,
+    "lng": 72.8721,
+    "source": "Community report",
+    "status": "Investigating",
+    "createdAt": "2026-03-11T06:10:00.000Z"
+  },
+  {
+    "id": "demo-report-3",
+    "type": "Pipeline seepage",
+    "description": "Slow roadside seepage reported after repeated overnight leakage.",
+    "lat": 19.0691,
+    "lng": 72.8798,
+    "source": "City open data sample",
+    "status": "Open",
+    "createdAt": "2026-03-09T17:45:00.000Z"
+  },
+  {
+    "id": "4622c850-c7ee-4a9f-b777-c5d47fba6436",
+    "type": "Leaking public tap",
+    "description": "Verification report from automated check.",
+    "lat": 19.076,
+    "lng": 72.8777,
+    "source": "Community report",
+    "status": "Open",
+    "createdAt": "2026-03-12T09:28:20.610Z"
+  },
+  {
+    "id": "31ae80ea-223a-46fd-938c-53978b1cdb3e",
+    "type": "Leaking public tap",
+    "description": "afa",
+    "lat": 18.987457,
+    "lng": 73.024697,
+    "source": "Community report",
+    "status": "Open",
+    "createdAt": "2026-03-12T17:30:16.605Z"
+  },
+  {
+    "id": "508e378a-fe8e-4657-819d-c64f32c1d14c",
+    "type": "Leaking public tap",
+    "description": "leaky tab",
+    "lat": 18.987457,
+    "lng": 73.024697,
+    "source": "Community report",
+    "status": "Open",
+    "createdAt": "2026-04-06T15:36:35.378Z"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  },
+  "name": "wp",
+  "version": "1.0.0",
+  "description": "AquaSave is a modern, educational web platform designed to raise awareness and empower people to conserve water. It features interactive tools, practical tips, and resources to help users understand and reduce their water footprint.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayush22042004/Aquasafe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ayush22042004/Aquasafe/issues"
+  },
+  "homepage": "https://github.com/Ayush22042004/Aquasafe#readme"
+}

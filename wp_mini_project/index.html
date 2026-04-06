@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSave - Water Conservation Education Platform</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 3C16 3 6 15.5 6 21C6 26.2 10.8 31 16 31C21.2 31 26 26.2 26 21C26 15.5 16 3 16 3Z' fill='%230099ff'/></svg>" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""
+    >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                                <span class="logo-icon">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <radialGradient id="dropGradient" cx="50%" cy="40%" r="70%">
+                                                <stop offset="0%" stop-color="#b3e0ff"/>
+                                                <stop offset="70%" stop-color="#0099ff"/>
+                                                <stop offset="100%" stop-color="#005fa3"/>
+                                            </radialGradient>
+                                        </defs>
+                                        <path d="M16 3C16 3 6 15.5 6 21C6 26.2467 10.7533 31 16 31C21.2467 31 26 26.2467 26 21C26 15.5 16 3 16 3Z" fill="url(#dropGradient)"/>
+                                        <ellipse cx="16" cy="24" rx="7" ry="3" fill="#b3e0ff" fill-opacity="0.3"/>
+                                    </svg>
+                                </span>
+                                <span class="logo-text">AquaSave</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#facts">Water Facts</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#tips">Conservation Tips</a></li>
+                <li><a href="#checklist">Checklist</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#nearby-reports">Nearby Reports</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Every Drop <span class="highlight">Counts</span></h1>
+                <p class="hero-subtitle">Learn how to conserve water and make a difference for our planet. Join millions in the movement to protect our most precious resource.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">97%</span>
+                        <span class="stat-label">of Earth's water is saltwater</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2.5B</span>
+                        <span class="stat-label">people lack safe water access</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">80%</span>
+                        <span class="stat-label">of wastewater goes untreated</span>
+                    </div>
+                </div>
+                <a href="#calculator" class="cta-button">Calculate Your Usage</a>
+            </div>
+            <div class="hero-visual">
+                <div class="water-scene">
+                    <div class="drop"></div>
+                    <div class="wave"></div>
+                 </div>
+                </div>
+                    <div class="water-surface">
+                        <div class="ripple ripple-1"></div>
+                        <div class="ripple ripple-2"></div>
+                        <div class="ripple ripple-3"></div>
+                    </div>
+                    <div class="floating-drops">
+                        <div class="mini-drop mini-drop-1"></div>
+                        <div class="mini-drop mini-drop-2"></div>
+                        <div class="mini-drop mini-drop-3"></div>
+                        <div class="mini-drop mini-drop-4"></div>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble bubble-1"></div>
+                        <div class="bubble bubble-2"></div>
+                        <div class="bubble bubble-3"></div>
+                        <div class="bubble bubble-4"></div>
+                        <div class="bubble bubble-5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg viewBox="0 0 2400 120" preserveAspectRatio="none">
+                <path d="M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 C1350,120 1550,0 1800,60 C2050,120 2250,0 2400,60 L2400,120 L0,120 Z" opacity=".3"></path>
+                <path d="M0,80 C200,20 400,100 600,80 C800,60 1000,100 1200,80 C1400,60 1600,100 1800,80 C2000,60 2200,100 2400,80 L2400,120 L0,120 Z" opacity=".5"></path>
+                <path d="M0,100 C300,60 500,100 700,90 C900,80 1100,100 1300,90 C1500,80 1700,100 1900,90 C2100,80 2300,100 2400,95 L2400,120 L0,120 Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Water Facts Section -->
+    <section id="facts" class="facts-section">
+        <div class="container">
+            <h2 class="section-title">Water Facts You Should Know</h2>
+            <p class="section-subtitle">Understanding the importance of water helps us appreciate why conservation matters</p>
+            
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <div class="fact-icon">🌍</div>
+                    <h3>Global Water Distribution</h3>
+                    <p>Only 3% of Earth's water is freshwater, and only 0.5% is available for drinking. The rest is locked in glaciers, ice caps, and underground.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🚿</div>
+                    <h3>Daily Water Usage</h3>
+                    <p>The average person uses about 135 litres of water per day. In India, urban households use approximately 150-200 litres daily per person.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🔧</div>
+                    <h3>Leaky Pipes Matter</h3>
+                    <p>A dripping faucet can waste more than 11,000 litres per year. That's enough water for over 180 showers!</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🌱</div>
+                    <h3>Agriculture Impact</h3>
+                    <p>Agriculture accounts for 70% of global freshwater use. It takes about 2,500 litres of water to produce just one kilogram of rice.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">⚡</div>
+                    <h3>Energy Connection</h3>
+                    <p>Heating water accounts for about 18% of home energy use. Conserving hot water saves both water and energy.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🏠</div>
+                    <h3>Indoor vs Outdoor</h3>
+                    <p>About 30% of household water is used outdoors. In dry climates, outdoor use can account for up to 60% of total consumption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Water Usage Calculator -->
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">Calculate Your Water Footprint</h2>
+            <p class="section-subtitle">Discover how much water you use daily and find ways to reduce your consumption</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label>👨‍👩‍👧‍👦 Number of people in household</label>
+                        <div class="input-row">
+                            <input type="number" id="household" min="1" max="20" value="1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>🚿 Showers per person per day</label>
+                        <div class="input-row">
+                            <input type="number" id="showers" min="0" max="5" value="1">
+                            <span class="input-helper">Avg. duration (min): <input type="number" id="showerDuration" min="1" max="30" value="8" style="width:70px;"> <span id="showerRateValue">× 9.5 litres/min</span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>🛁 Baths per person per week</label>
+                        <div class="input-row">
+                            <input type="number" id="baths" min="0" max="14" value="0">
+                            <span class="input-helper" id="bathHelper">× 135 litres each</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>🚽 Toilet flushes per person per day</label>
+                        <div class="input-row">
+                            <input type="number" id="flushes" min="0" max="20" value="5">
+                            <span class="input-helper">Toilet type:
+                                <select id="toiletType">
+                                    <option value="modern" id="toiletModernOption">Modern (4.8L/flush)</option>
+                                    <option value="dual" id="toiletDualOption">Dual-flush (3.6L avg/flush)</option>
+                                    <option value="old" id="toiletOldOption">Older toilet (22.7L/flush)</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>🦷 Minutes brushing teeth (tap running) per person per day</label>
+                        <div class="input-row">
+                            <input type="number" id="brushing" min="0" max="20" value="2">
+                            <span class="input-helper" id="tapHelper">× 8.3 litres/min</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>🍽️ Dishwasher loads per week</label>
+                        <div class="input-row">
+                            <input type="number" id="dishwasher" min="0" max="21" value="3">
+                            <span class="input-helper" id="dishwasherHelper">× 15 litres each</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>🍴 Hand-washing dishes (minutes per day for all)</label>
+                        <div class="input-row">
+                            <input type="number" id="handwashDishes" min="0" max="60" value="5">
+                            <span class="input-helper" id="handwashHelper">× 8.3 litres/min</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>👕 Laundry loads per week</label>
+                        <div class="input-row">
+                            <input type="number" id="laundry" min="0" max="14" value="2">
+                            <span class="input-helper">Machine type:
+                                <select id="machineType">
+                                    <option value="front" id="machineFrontOption">Front-load (50L/load)</option>
+                                    <option value="top" id="machineTopOption">Top-load (85L/load)</option>
+                                    <option value="semi" id="machineSemiOption">Semi-auto (65L/load)</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>🌿 Minutes watering garden/lawn per week (all)</label>
+                        <div class="input-row">
+                            <input type="number" id="watering" min="0" max="300" value="30">
+                            <span class="input-helper" id="wateringHelper">× 15 litres/min (planning estimate)</span>
+                        </div>
+                    </div>
+                    <div class="calculator-button-row">
+                        <button id="calculateBtn" class="calculate-btn">Calculate My Usage</button>
+                        <button id="nativeShareCalculatorBtn" class="secondary-action-btn" type="button">Share Result</button>
+                    </div>
+                </div>
+                
+                <div class="calculator-results" id="results">
+                    <div class="result-card">
+                        <h3>Your Daily Water Usage</h3>
+                        <div class="result-number" id="dailyUsage">0</div>
+                        <span class="result-unit">litres/day</span>
+                    </div>
+                    <div class="result-card">
+                        <h3>Your Monthly Usage</h3>
+                        <div class="result-number" id="monthlyUsage">0</div>
+                        <span class="result-unit">litres/month</span>
+                    </div>
+                    <div class="result-card">
+                        <h3>Your Yearly Usage</h3>
+                        <div class="result-number" id="yearlyUsage">0</div>
+                        <span class="result-unit">litres/year</span>
+                    </div>
+                    <div class="result-comparison" id="comparison">
+                        <p id="comparisonText">Click "Calculate My Usage" to see your results and personalized tips!</p>
+                        <p id="feedback" style="margin-top:8px;font-weight:600;"></p>
+                    </div>
+                    <div class="share-panel" id="calculatorSharePanel">
+                        <div class="share-panel-header">
+                            <h3>Share Your Water Footprint</h3>
+                            <p>Use one tap on mobile or choose a platform below.</p>
+                        </div>
+                        <div class="share-actions">
+                            <button class="share-btn" type="button" data-context="calculator" data-platform="whatsapp" title="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+                            <button class="share-btn" type="button" data-context="calculator" data-platform="x" title="X"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+                            <button class="share-btn" type="button" data-context="calculator" data-platform="facebook" title="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></button>
+                            <button class="share-btn" type="button" data-context="calculator" data-platform="linkedin" title="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+                            <button class="share-btn" type="button" data-context="calculator" data-platform="copy" title="Copy Summary"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+                        </div>
+                        <p class="inline-status" id="calculatorShareStatus"></p>
+                    </div>
+                    <details class="source-panel" id="calculatorSourcesPanel">
+                        <summary class="source-panel-toggle">Where These Figures Come From <span class="toggle-icon">&#9662;</span></summary>
+                        <div class="source-panel-body">
+                            <p id="calculatorSourceSummary" class="source-summary">Verified source data is loading.</p>
+                            <div id="calculatorSourcesList" class="source-list"></div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conservation Tips -->
+    <section id="tips" class="tips-section">
+        <div class="container">
+            <h2 class="section-title">Water Conservation Tips</h2>
+            <p class="section-subtitle">Simple changes can make a big difference. Explore tips for every area of your life.</p>
+            
+            <div class="tips-tabs">
+                <button class="tab-btn active" data-tab="bathroom">🚿 Bathroom</button>
+                <button class="tab-btn" data-tab="kitchen">🍳 Kitchen</button>
+                <button class="tab-btn" data-tab="outdoor">🌳 Outdoor</button>
+                <button class="tab-btn" data-tab="general">💡 General</button>
+            </div>
+            
+            <div class="tips-content">
+                <div class="tip-panel active" id="bathroom">
+                    <div class="tips-list">
+                        <div class="tip-item">
+                            <span class="tip-icon">⏱️</span>
+                            <div class="tip-text">
+                                <h4>Shorter Showers</h4>
+                                <p>Reduce shower time by 2 minutes to save up to 40 litres per shower. Use a timer to stay on track.</p>
+                                <span class="savings">💧 Saves: ~1,200 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🚿</span>
+                            <div class="tip-text">
+                                <h4>Low-Flow Showerhead</h4>
+                                <p>Install a low-flow showerhead that uses 7.5 litres per minute instead of 20 litres.</p>
+                                <span class="savings">💧 Saves: ~1,900 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🦷</span>
+                            <div class="tip-text">
+                                <h4>Turn Off the Tap</h4>
+                                <p>Don't let water run while brushing teeth or shaving. Turn it off and save litres daily.</p>
+                                <span class="savings">💧 Saves: ~750 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🚽</span>
+                            <div class="tip-text">
+                                <h4>Check for Leaks</h4>
+                                <p>Add food coloring to your toilet tank. If color appears in the bowl without flushing, you have a leak.</p>
+                                <span class="savings">💧 Saves: ~3,800 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🛁</span>
+                            <div class="tip-text">
+                                <h4>Fill Tub Wisely</h4>
+                                <p>When taking a bath, plug the drain immediately and adjust temperature as it fills.</p>
+                                <span class="savings">💧 Saves: ~200 litres/month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tip-panel" id="kitchen">
+                    <div class="tips-list">
+                        <div class="tip-item">
+                            <span class="tip-icon">🍽️</span>
+                            <div class="tip-text">
+                                <h4>Full Loads Only</h4>
+                                <p>Run your dishwasher only when it's full. This is more efficient than hand-washing dishes.</p>
+                                <span class="savings">💧 Saves: ~1,200 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🥬</span>
+                            <div class="tip-text">
+                                <h4>Wash Produce Wisely</h4>
+                                <p>Wash fruits and vegetables in a basin rather than under running water. Reuse the water for plants.</p>
+                                <span class="savings">💧 Saves: ~570 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🧊</span>
+                            <div class="tip-text">
+                                <h4>Thaw Responsibly</h4>
+                                <p>Thaw frozen foods in the refrigerator overnight instead of using running water.</p>
+                                <span class="savings">💧 Saves: ~380 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🚰</span>
+                            <div class="tip-text">
+                                <h4>Install Aerators</h4>
+                                <p>Faucet aerators can reduce water flow by 50% while maintaining pressure.</p>
+                                <span class="savings">💧 Saves: ~1,060 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">♻️</span>
+                            <div class="tip-text">
+                                <h4>Reuse Cooking Water</h4>
+                                <p>Save water from boiling pasta or vegetables. Once cooled, use it to water plants.</p>
+                                <span class="savings">💧 Saves: ~230 litres/month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tip-panel" id="outdoor">
+                    <div class="tips-list">
+                        <div class="tip-item">
+                            <span class="tip-icon">🌅</span>
+                            <div class="tip-text">
+                                <h4>Water Early Morning</h4>
+                                <p>Water your lawn early in the morning to reduce evaporation. Avoid watering on windy days.</p>
+                                <span class="savings">💧 Saves: ~1,900 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🌿</span>
+                            <div class="tip-text">
+                                <h4>Use Mulch</h4>
+                                <p>Apply mulch around plants to retain moisture and reduce watering needs by up to 50%.</p>
+                                <span class="savings">💧 Saves: ~2,840 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🌧️</span>
+                            <div class="tip-text">
+                                <h4>Collect Rainwater</h4>
+                                <p>Install rain barrels to collect water from gutters. Use it for watering plants and gardens.</p>
+                                <span class="savings">💧 Saves: ~4,900 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🌵</span>
+                            <div class="tip-text">
+                                <h4>Choose Native Plants</h4>
+                                <p>Plant drought-resistant and native species that require less water to thrive.</p>
+                                <span class="savings">💧 Saves: ~3,800 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🚗</span>
+                            <div class="tip-text">
+                                <h4>Skip the Hose</h4>
+                                <p>Use a bucket to wash your car or visit a car wash that recycles water.</p>
+                                <span class="savings">💧 Saves: ~380 litres/wash</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tip-panel" id="general">
+                    <div class="tips-list">
+                        <div class="tip-item">
+                            <span class="tip-icon">📊</span>
+                            <div class="tip-text">
+                                <h4>Monitor Your Bill</h4>
+                                <p>Track your water usage monthly. Unusual increases may indicate leaks or waste.</p>
+                                <span class="savings">💧 Awareness is key!</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🔧</span>
+                            <div class="tip-text">
+                                <h4>Fix Leaks Immediately</h4>
+                                <p>A small drip can waste 75 litres per day. Check faucets, toilets, and pipes regularly.</p>
+                                <span class="savings">💧 Saves: ~2,270 litres/month</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🏆</span>
+                            <div class="tip-text">
+                                <h4>Buy BIS/ISI Certified Products</h4>
+                                <p>Look for Bureau of Indian Standards certified water-efficient fixtures and appliances.</p>
+                                <span class="savings">💧 20% more efficient</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">📚</span>
+                            <div class="tip-text">
+                                <h4>Educate Your Family</h4>
+                                <p>Teach children about water conservation. Make it a family effort and celebrate progress.</p>
+                                <span class="savings">💧 Multiply your impact!</span>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🤝</span>
+                            <div class="tip-text">
+                                <h4>Spread the Word</h4>
+                                <p>Share conservation tips with neighbors and community. Collective action creates real change.</p>
+                                <span class="savings">💧 Community impact!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conservation Checklist -->
+    <section id="checklist" class="checklist-section">
+        <div class="container">
+            <h2 class="section-title">Your Water-Saving Checklist</h2>
+            <p class="section-subtitle">Track your progress and commit to water-saving habits</p>
+            
+            <div class="checklist-container">
+                <div class="checklist-progress">
+                    <div class="progress-ring">
+                        <svg width="150" height="150">
+                            <circle cx="75" cy="75" r="65" class="progress-bg"></circle>
+                            <circle cx="75" cy="75" r="65" class="progress-fill" id="progressCircle"></circle>
+                        </svg>
+                        <div class="progress-text">
+                            <span id="progressPercent">0</span>%
+                        </div>
+                    </div>
+                    <p class="progress-label">Habits Completed</p>
+                    <div class="potential-savings">
+                        <span class="savings-label">Potential Monthly Savings:</span>
+                        <span class="savings-value" id="potentialSavings">0 litres</span>
+                    </div>
+                </div>
+                
+                <div class="checklist-items">
+                    <div class="checklist-item" data-savings="1135">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">
+                            <span class="check-text">I take showers under 5 minutes</span>
+                            <span class="check-savings">~1,135 L/mo</span>
+                        </label>
+                    </div>
+                    <div class="checklist-item" data-savings="750">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">
+                            <span class="check-text">I turn off water while brushing teeth</span>
+                            <span class="check-savings">~750 L/mo</span>
+                        </label>
+                    </div>
+                    <div class="checklist-item" data-savings="1900">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">
+                            <span class="check-text">I have low-flow showerheads installed</span>
+                            <span class="check-savings">~1,900 L/mo</span>
+                        </label>
+                    </div>
+                    <div class="checklist-item" data-savings="1200">
+                        <input type="checkbox" id="check4">
+                        <label for="check4">
+                            <span class="check-text">I only run full loads in dishwasher</span>
+                            <span class="check-savings">~1,200 L/mo</span>
+                        </label>
+                    </div>
+                    <div class="checklist-item" data-savings="1500">
+                        <input type="checkbox" id="check5">
+                        <label for="check5">
+                            <span class="check-text">I only run full loads of laundry</span>
+                            <span class="check-savings">~1,500 L/mo</span>
+                        </label>
+                    </div>
+                    <div class="checklist-item" data-savings="2270">
+                        <input type="checkbox" id="check6">
+                        <label for="check6">
+                            <span class="check-text">I've fixed all leaks in my home</span>
+                            <span class="check-savings">~2,270 L/mo</span>
+                        </label>
+                    </div>
+                    <div class="checklist-item" data-savings="1900">
+                        <input type="checkbox" id="check7">
+                        <label for="check7">
+                            <span class="check-text">I water plants in early morning</span>
+                            <span class="check-savings">~1,900 L/mo</span>
+                        </label>
+                    </div>
+                    <div class="checklist-item" data-savings="2840">
+                        <input type="checkbox" id="check8">
+                        <label for="check8">
+                            <span class="check-text">I use mulch in my garden</span>
+                            <span class="check-savings">~2,840 L/mo</span>
+                        </label>
+                    </div>
+                    <div class="checklist-item" data-savings="4900">
+                        <input type="checkbox" id="check9">
+                        <label for="check9">
+                            <span class="check-text">I collect and use rainwater</span>
+                            <span class="check-savings">~4,900 L/mo</span>
+                        </label>
+                    </div>
+                    <div class="checklist-item" data-savings="1060">
+                        <input type="checkbox" id="check10">
+                        <label for="check10">
+                            <span class="check-text">I have faucet aerators installed</span>
+                            <span class="check-savings">~1,060 L/mo</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources-section">
+        <div class="container">
+            <h2 class="section-title">Learn More</h2>
+            <p class="section-subtitle">Explore these resources to deepen your water conservation knowledge</p>
+            
+            <div class="resources-grid">
+                <a href="https://jalshakti-dowr.gov.in/" target="_blank" class="resource-card">
+                    <div class="resource-icon">🇮🇳</div>
+                    <h3>Jal Shakti Ministry</h3>
+                    <p>India's Ministry of Jal Shakti for water resources, river development, and Ganga rejuvenation.</p>
+                    <span class="resource-link">Visit Site →</span>
+                </a>
+                <a href="https://www.worldwildlife.org/our-work/freshwater/" target="_blank" class="resource-card">
+                    <div class="resource-icon">🐼</div>
+                    <h3>WWF Freshwater</h3>
+                    <p>Learn about global freshwater conservation efforts and how to get involved.</p>
+                    <span class="resource-link">Visit Site →</span>
+                </a>
+                <a href="https://www.water.org" target="_blank" class="resource-card">
+                    <div class="resource-icon">💧</div>
+                    <h3>Water.org</h3>
+                    <p>Help bring safe water and sanitation to families in India and around the world.</p>
+                    <span class="resource-link">Visit Site →</span>
+                </a>
+                <a href="https://www.unwater.org/" target="_blank" class="resource-card">
+                    <div class="resource-icon">🌐</div>
+                    <h3>UN Water</h3>
+                    <p>United Nations coordination mechanism for freshwater and sanitation issues globally.</p>
+                    <span class="resource-link">Visit Site →</span>
+                </a>
+                <a href="https://cwc.gov.in/" target="_blank" class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3>Central Water Commission</h3>
+                    <p>India's apex technical organization for water resources development and management.</p>
+                    <span class="resource-link">Visit Site →</span>
+                </a>
+                <a href="https://www.indiawaterportal.org/" target="_blank" class="resource-card">
+                    <div class="resource-icon">🤝</div>
+                    <h3>Indiawaterportal</h3>
+                    <p>India Water Portal is a website that shares knowledge and builds communities around water and related issues in India </p>
+                    <span class="resource-link">Visit Site →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nearby-reports" class="nearby-reports-section">
+        <div class="container">
+            <h2 class="section-title">Find Water Wastage Near You</h2>
+            <p class="section-subtitle">Use your location to see nearby reported leaks, overspray, and other water-wastage issues. You can also submit a report from the map.</p>
+
+            <div class="nearby-reports-shell">
+                <div class="nearby-controls">
+                    <div class="nearby-actions">
+                        <button id="locateReportsBtn" class="cta-button" type="button">Use My Location</button>
+                        <button id="useDemoLocationBtn" class="secondary-action-btn" type="button">Use Demo Area</button>
+                    </div>
+                    <div class="radius-control">
+                        <label for="reportRadius">Search radius</label>
+                        <select id="reportRadius">
+                            <option value="2">2 km</option>
+                            <option value="5" selected>5 km</option>
+                            <option value="10">10 km</option>
+                            <option value="20">20 km</option>
+                        </select>
+                    </div>
+                    <p id="reportsStatus" class="inline-status inline-status-visible">Location access lets AquaSave show issues around you. If you skip it, the demo area opens instead.</p>
+                </div>
+
+                <div class="nearby-layout">
+                    <div class="map-card">
+                        <div id="reportsMap" class="reports-map" aria-label="Nearby water wastage map"></div>
+                    </div>
+
+                    <div class="reports-side-panel">
+                        <div class="report-form-card">
+                            <h3>Report Water Wastage</h3>
+                            <p>Your current map location is used when you submit a report.</p>
+                            <form id="reportIssueForm" class="report-issue-form">
+                                <label for="reportType">Issue type</label>
+                                <select id="reportType" required>
+                                    <option value="">Select issue</option>
+                                    <option value="Leaking public tap">Leaking public tap</option>
+                                    <option value="Broken sprinkler">Broken sprinkler</option>
+                                    <option value="Pipeline seepage">Pipeline seepage</option>
+                                    <option value="Overflowing tank">Overflowing tank</option>
+                                    <option value="Other water waste">Other water waste</option>
+                                </select>
+                                <label for="reportDescription">What did you observe?</label>
+                                <textarea id="reportDescription" rows="4" maxlength="240" placeholder="Describe what is wasting water and anything useful for locating it." required></textarea>
+                                <button type="submit" class="calculate-btn">Submit Report</button>
+                            </form>
+                            <p id="reportSubmitStatus" class="inline-status"></p>
+                        </div>
+
+                        <div class="report-list-card">
+                            <div class="report-list-header">
+                                <h3>Nearby Reports</h3>
+                                <span id="reportsCountBadge" class="count-badge">0</span>
+                            </div>
+                            <div id="reportsList" class="report-list">
+                                <p class="empty-state">Nearby reports will appear here after location lookup.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <h2 class="section-title">Quick Quiz</h2>
+            <p class="section-subtitle">Test your water conservation knowledge with a curated 10-question round.</p>
+            <div id="quiz-container">
+                <div id="quiz-start">
+                    <div class="quiz-launch-actions">
+                        <button id="startQuizBtn" class="cta-button">Start Quiz</button>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top:20px;">
+                <a href="leaderboard.html" class="cta-button">View Leaderboard</a>
+            </div>
+        </div>
+    </section>
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Make a Difference?</h2>
+                <p>Start your water conservation journey today. Every action counts, no matter how small.</p>
+                <div class="cta-buttons">
+                    <a href="#calculator" class="cta-btn primary">Calculate Your Usage</a>
+                    <a href="#checklist" class="cta-btn secondary">Start Your Checklist</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">💧</span>
+                    <span class="logo-text">AquaSave</span>
+                    <p>Educating and empowering people to conserve our most precious resource.</p>
+                    <div class="team-credits">
+                        <p class="credits-title">Designed & Developed by</p>
+                        <div class="team-members">
+                            <p>
+                                Priyanshu chauhan
+                        </p>
+                        <br>
+                    <p>
+                                Harsh Gaikwad
+                        <br>
+
+                    </p>
+                    <p>
+                        
+                                Ramakant Shrivastava
+                        <br>
+    
+                </p>
+                <p>
+                            
+                                Swaraj Patil
+                            
+
+            </p>
+                        </div>
+                        <p class="credits-tagline">Made with 💙 for our planet</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#facts">Water Facts</a></li>
+                        <li><a href="#calculator">Calculator</a></li>
+                        <li><a href="#tips">Conservation Tips</a></li>
+                        <li><a href="#checklist">Checklist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get Involved</h4>
+                    <p>Share your water-saving tips and success stories with our community.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AquaSave. Made with 💙 for our planet.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""
+    ></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
+

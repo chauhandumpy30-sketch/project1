@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSave - Leaderboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation (reuse same markup as index) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html#home" class="logo">
+                <span class="logo-icon">
+                    <!-- truncated svg for brevity -->
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="dropGradient" cx="50%" cy="40%" r="70%">
+                                <stop offset="0%" stop-color="#b3e0ff"/>
+                                <stop offset="70%" stop-color="#0099ff"/>
+                                <stop offset="100%" stop-color="#005fa3"/>
+                            </radialGradient>
+                        </defs>
+                        <path d="M16 3C16 3 6 15.5 6 21C6 26.2467 10.7533 31 16 31C21.2467 31 26 26.2467 26 21C26 15.5 16 3 16 3Z" fill="url(#dropGradient)"/>
+                        <ellipse cx="16" cy="24" rx="7" ry="3" fill="#b3e0ff" fill-opacity="0.3"/>
+                    </svg>
+                </span>
+                <span class="logo-text">AquaSave</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#facts">Water Facts</a></li>
+                <li><a href="index.html#calculator">Calculator</a></li>
+                <li><a href="index.html#tips">Conservation Tips</a></li>
+                <li><a href="index.html#checklist">Checklist</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+                <li><a href="index.html#quiz">Quiz</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <section class="quiz-section" style="padding-top:120px;">
+        <div class="container">
+            <h2 class="section-title">Leaderboard</h2>
+            <div id="leaderboard-container">
+                <h3>Leaderboard</h3>
+                <ol id="leaderboard-list"></ol>
+            </div>
+            <div style="margin-top:20px; text-align:center;">
+                <a href="index.html#quiz" class="cta-button">Return to Quiz</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
